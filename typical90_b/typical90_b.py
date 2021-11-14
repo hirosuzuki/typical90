@@ -2,6 +2,7 @@ from typing import Dict, Set
 
 N = int(input())
 
+
 def solve(N: int):
 
     if N % 2 == 1:
@@ -23,4 +24,21 @@ def solve(N: int):
     for x in sorted(rs[N]):
         print(x)
 
-solve(N)
+
+def solve1(N: int):
+
+    def check(x: int) -> bool:
+        t = 0
+        for j in range(N):
+            b = (i >> N - j - 1) & 1
+            t += 1 - b * 2
+            if t < 0:
+                return False
+        return t == 0
+
+    for i in range(2**N):
+        if check(i):
+            print("".join(["()"[(i >> N - j - 1) & 1] for j in range(N)]))
+
+
+solve1(N)
