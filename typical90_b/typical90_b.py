@@ -1,5 +1,8 @@
 from typing import Dict, Set
 
+# https://twitter.com/e869120/status/1377027868518064129/photo/2
+# https://atcoder.jp/contests/typical90/tasks/typical90_b
+
 N = int(input())
 
 
